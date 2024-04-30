@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de nom aléatoire</title>
+</head>
+<body>
+
+<h1>Générateur de nom aléatoire</h1>
+
+<p id="nom_choisi"></p>
+
+<script src="generateur_nom.js"></script>
+<script>
+    // Appeler la fonction pour générer un nom aléatoire
+    const nomChoisi = genererNom();
+
+    // Afficher le nom choisi dans la page HTML
+    document.getElementById("nom_choisi").textContent = "Le nom choisi est : " + nomChoisi;
+</script>
+
+</body>
+</html>
