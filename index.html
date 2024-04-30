@@ -16,16 +16,19 @@
 
 <script src="generateur_nom.js"></script>
 <script>
-    
     const boutonGenererNom = document.getElementById("bouton_generer_nom");
+    const nomChoisi = document.getElementById("nom_choisi");
 
-   
     boutonGenererNom.addEventListener("click", function() {
-        
-        const nomChoisi = genererNom();
-        
-    
-        document.getElementById("nom_choisi").textContent = "Le nom choisi est : " + nomChoisi;
+        nomChoisi.classList.add("hidden");
+        boutonGenererNom.disabled = true;
+
+        setTimeout(function() {
+            const nom = genererNom();
+            nomChoisi.textContent = "Le nom choisi est : " + nom;
+            nomChoisi.classList.remove("hidden");
+            boutonGenererNom.disabled = false;
+        }, 3000);
     });
 </script>
 </body>
