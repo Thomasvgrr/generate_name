@@ -8,21 +8,11 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>Générateur de nom aléatoire</h1>
-    <div class="content">
-        <div class="nom-section">
-            <p id="nom_choisi" class="hidden"></p>
-            <button id="bouton_generer_nom">Générer un nom</button>
-            <div id="loader" class="hidden"></div>
-        </div>
-        <div class="nom-section">
-            <p id="nom_personnage" class="hidden"></p>
-            <button id="bouton_generer_personnage">Générer un nom de personnage</button>
-            <div id="loader_personnage" class="hidden"></div>
-        </div>
-    </div>
-</div>
+<h1>Générateur de nom aléatoire</h1>
+
+<p id="nom_choisi"></p>
+
+<button id="bouton_generer_nom">Générer un nom</button>
 
 <script src="generateur_nom.js"></script>
 <script>
@@ -40,25 +30,6 @@
             nomChoisi.textContent = "Le nom choisi est : " + nom;
             nomChoisi.classList.remove("hidden");
             boutonGenererNom.disabled = false;
-            loader.classList.add("hidden");
-        }, 3000);
-    });
-
-    const boutonGenererPersonnage = document.getElementById("bouton_generer_personnage");
-    const nomPersonnage = document.getElementById("nom_personnage");
-    const loaderPersonnage = document.getElementById("loader_personnage");
-
-    boutonGenererPersonnage.addEventListener("click", function() {
-        nomPersonnage.classList.add("hidden");
-        boutonGenererPersonnage.disabled = true;
-        loaderPersonnage.classList.remove("hidden");
-
-        setTimeout(function() {
-            const nom = genererNomPersonnage();
-            nomPersonnage.textContent = "Le nom du personnage est : " + nom;
-            nomPersonnage.classList.remove("hidden");
-            boutonGenererPersonnage.disabled = false;
-            loaderPersonnage.classList.add("hidden");
         }, 3000);
     });
 </script>
