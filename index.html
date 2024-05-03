@@ -10,24 +10,29 @@
 
 <h1>Générateur de nom aléatoire</h1>
 
-<p id="nom_choisi"></p>
+<p id="nom_choisi" class="hidden"></p>
 
 <button id="bouton_generer_nom">Générer un nom</button>
+
+<div id="loader" class="hidden"></div>
 
 <script src="generateur_nom.js"></script>
 <script>
     const boutonGenererNom = document.getElementById("bouton_generer_nom");
     const nomChoisi = document.getElementById("nom_choisi");
+    const loader = document.getElementById("loader");
 
     boutonGenererNom.addEventListener("click", function() {
         nomChoisi.classList.add("hidden");
         boutonGenererNom.disabled = true;
+        loader.classList.remove("hidden");
 
         setTimeout(function() {
             const nom = genererNom();
             nomChoisi.textContent = "Le nom choisi est : " + nom;
             nomChoisi.classList.remove("hidden");
             boutonGenererNom.disabled = false;
+            loader.classList.add("hidden");
         }, 3000);
     });
 </script>
