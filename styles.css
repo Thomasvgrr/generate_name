@@ -1,25 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
 
+.container {
+    max-width: 500px;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
 h1 {
     color: #333;
+    text-align: center;
 }
 
-#container {
-    margin-top: 50px;
+.content {
+    text-align: center;
 }
 
-#nom_choisi {
+.nom-section {
+    margin-bottom: 40px;
+}
+
+#nom_choisi, #nom_personnage {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-#bouton_generer_nom {
+button {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -29,6 +42,26 @@ h1 {
     transition: background-color 0.3s;
 }
 
-#bouton_generer_nom:hover {
+button:hover {
     background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.loader, .loader_personnage {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
